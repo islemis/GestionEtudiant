@@ -1,0 +1,40 @@
+<app-navigation></app-navigation>
+
+<table class="table table-borderless">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Nom</th>
+      <th scope="col">Prenom</th>
+      <th scope="col">classe</th>
+      <th scope="col">Cin</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr  *ngFor="let student of students" >
+      <th >{{student.Sid}}</th>
+      <td>{{student.nom}}</td>
+ 
+      <td >{{student.prenom}}</td>
+      <td>{{student.classe}}</td>
+      <td>{{student.cin}}</td>
+      <td>  <div class="card-body">
+      
+        <a [routerLink]="['/students/edit' , student.Sid]" class="btn btn-info btn-block">
+          update student
+        </a>
+     </div>  
+      
+      <button class="btn btn-danger" (click)="deleteStudent(student.Sid)">
+        <i class="far fa-trash-alt"></i>
+      </button>
+   
+    
+    </td>
+    </tr>
+ 
+    
+  
+  </tbody>
+</table>
